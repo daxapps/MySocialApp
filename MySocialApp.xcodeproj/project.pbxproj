@@ -20,6 +20,7 @@
 		E0DA846F1E533BF800BAA828 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA846E1E533BF800BAA828 /* FeedVC.swift */; };
 		E0DA84721E53A50000BAA828 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA84711E53A50000BAA828 /* CircleView.swift */; };
 		E0DA84741E53A58000BAA828 /* FancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA84731E53A58000BAA828 /* FancyView.swift */; };
+		E0DA84761E53ACA600BAA828 /* PostCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA84751E53ACA600BAA828 /* PostCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		E0DA846E1E533BF800BAA828 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 		E0DA84711E53A50000BAA828 /* CircleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		E0DA84731E53A58000BAA828 /* FancyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyView.swift; sourceTree = "<group>"; };
+		E0DA84751E53ACA600BAA828 /* PostCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PostCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +161,7 @@
 			children = (
 				E0DA84711E53A50000BAA828 /* CircleView.swift */,
 				E0DA84731E53A58000BAA828 /* FancyView.swift */,
+				E0DA84751E53ACA600BAA828 /* PostCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -395,6 +398,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E0DA84761E53ACA600BAA828 /* PostCell.swift in Sources */,
 				E047D7891E52725200337ED3 /* SignInVC.swift in Sources */,
 				E0DA84721E53A50000BAA828 /* CircleView.swift in Sources */,
 				E0DA84741E53A58000BAA828 /* FancyView.swift in Sources */,

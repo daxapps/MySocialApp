@@ -206,7 +206,7 @@
                                     <constraint firstItem="n1K-QN-S8T" firstAttribute="centerX" secondItem="hxM-1Z-oD1" secondAttribute="centerX" id="zRs-c8-plz"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="240" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x6o-5a-g83">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="240" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x6o-5a-g83">
                                 <rect key="frame" x="0.0" y="66" width="320" height="427"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
@@ -327,6 +327,7 @@
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="tableView" destination="x6o-5a-g83" id="mJc-Di-W8p"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="4gS-3L-hE8"/>
                     </connections>
                 </viewController>
