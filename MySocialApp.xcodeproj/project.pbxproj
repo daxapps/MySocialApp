@@ -15,7 +15,7 @@
 		E047D78E1E52725200337ED3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E047D78D1E52725200337ED3 /* Assets.xcassets */; };
 		E047D7911E52725200337ED3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E047D78F1E52725200337ED3 /* LaunchScreen.storyboard */; };
 		E047D79C1E52725200337ED3 /* MySocialAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E047D79B1E52725200337ED3 /* MySocialAppTests.swift */; };
-		E047D7A71E52728C00337ED3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E047D7A61E52728C00337ED3 /* GoogleService-Info.plist */; };
+		E0DA846A1E532C3300BAA828 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0DA84691E532C3300BAA828 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,7 +45,8 @@
 		E047D7971E52725200337ED3 /* MySocialAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MySocialAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		E047D79B1E52725200337ED3 /* MySocialAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MySocialAppTests.swift; sourceTree = "<group>"; };
 		E047D79D1E52725200337ED3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		E047D7A61E52728C00337ED3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E0DA84681E531FBB00BAA828 /* MySocialApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MySocialApp.entitlements; sourceTree = "<group>"; };
+		E0DA84691E532C3300BAA828 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +112,7 @@
 		E047D7851E52725200337ED3 /* MySocialApp */ = {
 			isa = PBXGroup;
 			children = (
+				E0DA84681E531FBB00BAA828 /* MySocialApp.entitlements */,
 				E047D7861E52725200337ED3 /* AppDelegate.swift */,
 				E0DA84671E5277C000BAA828 /* Model */,
 				E0DA84661E5277B800BAA828 /* View */,
@@ -119,7 +121,7 @@
 				E047D78D1E52725200337ED3 /* Assets.xcassets */,
 				E047D78F1E52725200337ED3 /* LaunchScreen.storyboard */,
 				E047D7921E52725200337ED3 /* Info.plist */,
-				E047D7A61E52728C00337ED3 /* GoogleService-Info.plist */,
+				E0DA84691E532C3300BAA828 /* GoogleService-Info.plist */,
 			);
 			path = MySocialApp;
 			sourceTree = "<group>";
@@ -213,6 +215,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = EN498SV6Q8;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+						};
 					};
 					E047D7961E52725200337ED3 = {
 						CreatedOnToolsVersion = 8.2.1;
@@ -247,7 +254,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E047D7911E52725200337ED3 /* LaunchScreen.storyboard in Resources */,
-				E047D7A71E52728C00337ED3 /* GoogleService-Info.plist in Resources */,
+				E0DA846A1E532C3300BAA828 /* GoogleService-Info.plist in Resources */,
 				E047D78E1E52725200337ED3 /* Assets.xcassets in Resources */,
 				E047D78C1E52725200337ED3 /* Main.storyboard in Resources */,
 			);
@@ -501,6 +508,7 @@
 			baseConfigurationReference = BD5B1AA286A6217546A4FD00 /* Pods-MySocialApp.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MySocialApp/MySocialApp.entitlements;
 				DEVELOPMENT_TEAM = EN498SV6Q8;
 				INFOPLIST_FILE = MySocialApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -515,6 +523,7 @@
 			baseConfigurationReference = 29D972CCD35BEBCCE8286993 /* Pods-MySocialApp.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = MySocialApp/MySocialApp.entitlements;
 				DEVELOPMENT_TEAM = EN498SV6Q8;
 				INFOPLIST_FILE = MySocialApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -66,6 +66,9 @@
                                 <state key="normal" title="    Log in with Facebook" image="facebookLogo">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="facebookBtnTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="XLJ-4d-Njt"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="zRp-or-Lsu">
                                 <rect key="frame" x="35" y="354" width="250" height="106"/>
@@ -86,8 +89,9 @@
                                         <rect key="frame" x="0.0" y="76" width="250" height="30"/>
                                         <color key="backgroundColor" red="0.94848805670000003" green="0.28875610229999998" blue="0.0030317916529999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
-                                        <state key="normal" title="Sign In With Email">
+                                        <state key="normal" title="Log in with Email">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                     </button>
                                 </subviews>
