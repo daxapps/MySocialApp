@@ -16,6 +16,8 @@
 		E047D7911E52725200337ED3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E047D78F1E52725200337ED3 /* LaunchScreen.storyboard */; };
 		E047D79C1E52725200337ED3 /* MySocialAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = E047D79B1E52725200337ED3 /* MySocialAppTests.swift */; };
 		E0DA846A1E532C3300BAA828 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E0DA84691E532C3300BAA828 /* GoogleService-Info.plist */; };
+		E0DA846D1E533A1F00BAA828 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA846C1E533A1F00BAA828 /* Constants.swift */; };
+		E0DA846F1E533BF800BAA828 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E0DA846E1E533BF800BAA828 /* FeedVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +49,8 @@
 		E047D79D1E52725200337ED3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		E0DA84681E531FBB00BAA828 /* MySocialApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MySocialApp.entitlements; sourceTree = "<group>"; };
 		E0DA84691E532C3300BAA828 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E0DA846C1E533A1F00BAA828 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		E0DA846E1E533BF800BAA828 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +121,8 @@
 				E0DA84671E5277C000BAA828 /* Model */,
 				E0DA84661E5277B800BAA828 /* View */,
 				E0DA84651E52779900BAA828 /* Controller */,
+				E0DA846B1E5339EB00BAA828 /* Utilities */,
+				E0DA84701E53424500BAA828 /* Services */,
 				E047D78A1E52725200337ED3 /* Main.storyboard */,
 				E047D78D1E52725200337ED3 /* Assets.xcassets */,
 				E047D78F1E52725200337ED3 /* LaunchScreen.storyboard */,
@@ -139,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				E047D7881E52725200337ED3 /* SignInVC.swift */,
+				E0DA846E1E533BF800BAA828 /* FeedVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -155,6 +162,21 @@
 			children = (
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		E0DA846B1E5339EB00BAA828 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E0DA846C1E533A1F00BAA828 /* Constants.swift */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		E0DA84701E53424500BAA828 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Services;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -368,7 +390,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				E047D7891E52725200337ED3 /* SignInVC.swift in Sources */,
+				E0DA846F1E533BF800BAA828 /* FeedVC.swift in Sources */,
 				E047D7871E52725200337ED3 /* AppDelegate.swift in Sources */,
+				E0DA846D1E533A1F00BAA828 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

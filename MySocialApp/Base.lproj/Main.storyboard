@@ -121,14 +121,47 @@
                     <connections>
                         <outlet property="emailField" destination="RPL-5I-hGw" id="pjZ-wr-m24"/>
                         <outlet property="passwordField" destination="NXK-Kj-gMu" id="wYF-I5-eGZ"/>
+                        <segue destination="bR5-Rz-fa8" kind="show" identifier="goToFeed" id="aes-f8-Gbe"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="31.875" y="36.971830985915496"/>
         </scene>
+        <!--FeedVC-->
+        <scene sceneID="5kb-oV-9PB">
+            <objects>
+                <viewController id="bR5-Rz-fa8" customClass="FeedVC" customModule="MySocialApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iBu-oB-XJY"/>
+                        <viewControllerLayoutGuide type="bottom" id="XwO-lf-Zmq"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="HRJ-sQ-c6A">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cun-qh-Qqr">
+                                <rect key="frame" x="114" y="229" width="92" height="65"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="sign-out"/>
+                                <connections>
+                                    <action selector="signOutTapped:" destination="bR5-Rz-fa8" eventType="touchUpInside" id="roS-Or-Av2"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.29673840350000003" green="0.61520525569999995" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    </view>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="4gS-3L-hE8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nN8-XO-GGn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="819" y="37"/>
+        </scene>
     </scenes>
     <resources>
         <image name="facebookLogo" width="35" height="35"/>
+        <image name="sign-out" width="92" height="65"/>
     </resources>
 </document>
