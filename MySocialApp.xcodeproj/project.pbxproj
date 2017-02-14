@@ -111,10 +111,10 @@
 		E047D7851E52725200337ED3 /* MySocialApp */ = {
 			isa = PBXGroup;
 			children = (
+				E047D7861E52725200337ED3 /* AppDelegate.swift */,
 				E0DA84671E5277C000BAA828 /* Model */,
 				E0DA84661E5277B800BAA828 /* View */,
 				E0DA84651E52779900BAA828 /* Controller */,
-				E047D7861E52725200337ED3 /* AppDelegate.swift */,
 				E047D78A1E52725200337ED3 /* Main.storyboard */,
 				E047D78D1E52725200337ED3 /* Assets.xcassets */,
 				E047D78F1E52725200337ED3 /* LaunchScreen.storyboard */,
