@@ -19,7 +19,7 @@ class PostCell: UITableViewCell {
     @IBOutlet weak var likeImg: UIImageView!
 
     var post: Post!
-    //    var likesRef: FIRDatabaseReference!
+    var likesRef: FIRDatabaseReference!
     
     override func awakeFromNib() {
         super.awakeFromNib()
