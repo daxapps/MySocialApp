@@ -20,6 +20,22 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource {
         tableView.delegate = self
         tableView.dataSource = self
         
+        DataService.ds.REF_POSTS.observe(.value, with: { (snapshot) in
+            print(snapshot.value ?? "??")
+//            self.posts = [] // THIS IS THE NEW LINE
+//            
+//            if let snapshot = snapshot.children.allObjects as? [FIRDataSnapshot] {
+//                for snap in snapshot {
+//                    print("SNAP: \(snap)")
+//                    if let postDict = snap.value as? Dictionary<String, AnyObject> {
+//                        let key = snap.key
+//                        let post = Post(postKey: key, postData: postDict)
+//                        self.posts.append(post)
+//                    }
+//                }
+//            }
+//            self.tableView.reloadData()
+        })
     }
     
     
