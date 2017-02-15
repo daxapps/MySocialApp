@@ -146,12 +146,13 @@
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cun-qh-Qqr">
                                         <rect key="frame" x="14" y="22" width="41" height="36"/>
+                                        <gestureRecognizers/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="41" id="6B6-Be-ngA"/>
                                         </constraints>
                                         <state key="normal" image="sign-out"/>
                                         <connections>
-                                            <action selector="signOutTapped:" destination="bR5-Rz-fa8" eventType="touchUpInside" id="roS-Or-Av2"/>
+                                            <outletCollection property="gestureRecognizers" destination="P7t-Zw-sAk" appends="YES" id="jBy-Oc-DK2"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -214,7 +215,7 @@
                                         <rect key="frame" x="0.0" y="28" width="320" height="339"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T0Y-d1-xZL" id="7Ib-MW-5JE">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="338"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="339"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PMq-bc-BF2" customClass="FancyView" customModule="MySocialApp" customModuleProvider="target">
@@ -332,6 +333,11 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nN8-XO-GGn" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="P7t-Zw-sAk">
+                    <connections>
+                        <action selector="signOutTapped:" destination="bR5-Rz-fa8" id="39T-jr-tDT"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="817.5" y="36.971830985915496"/>
         </scene>
