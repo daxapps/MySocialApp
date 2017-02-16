@@ -16,6 +16,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     var imagePicker: UIImagePickerController!
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
     var imageSelected = false
+    var keyboardOnScreen = false
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageAdd: CircleView!
@@ -49,6 +50,17 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         })
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        subscribeToKeyboardNotifications()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        unsubscribeFromKeyboardNotifications()
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -116,6 +128,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
                     if let url = downloadURL {
                         self.postToFirebase(imgUrl: url)
                     }
+                    self.resignTextfield()
                 }
             }
         }
@@ -145,6 +158,57 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         try! FIRAuth.auth()?.signOut()
         performSegue(withIdentifier: "goToSignIn", sender: nil)
         
+    }
+    
+    // MARK: Keyboard Notifications
+    
+    func subscribeToKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(FeedVC.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(FeedVC.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    func keyboardWillShow(_ notification: NSNotification) {
+        resetViewFrame()
+        if captionField.isFirstResponder {
+            view.frame.origin.y = getKeyboardHeight(notification) * -1
+        }
+    }
+    
+    func keyboardWillHide(_ notification: NSNotification) {
+        if captionField.isFirstResponder {
+            resetViewFrame()
+        }
+    }
+    
+    func resetViewFrame(){
+        view.frame.origin.y = 0
+    }
+    
+    func getKeyboardHeight(_ notification: NSNotification) -> CGFloat {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+        return keyboardSize.cgRectValue.height
+    }
+    
+    func unsubscribeFromKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    // MARK: Textfield
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+//        let data = [Constants.MessageFields.text: textField.text! as String]
+//        sendMessage(data: data)
+        textField.text = ""
+        return true
+    }
+    
+    func resignTextfield() {
+        if captionField.isFirstResponder {
+            captionField.resignFirstResponder()
+        }
     }
 
 }
