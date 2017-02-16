@@ -214,22 +214,22 @@
                                     <constraint firstItem="n1K-QN-S8T" firstAttribute="centerX" secondItem="hxM-1Z-oD1" secondAttribute="centerX" id="zRs-c8-plz"/>
                                 </constraints>
                             </view>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="240" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x6o-5a-g83">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="339" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="x6o-5a-g83">
                                 <rect key="frame" x="0.0" y="66" width="320" height="427"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="365" id="T0Y-d1-xZL" customClass="PostCell" customModule="MySocialApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="365"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="395" id="T0Y-d1-xZL" customClass="PostCell" customModule="MySocialApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="395"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T0Y-d1-xZL" id="7Ib-MW-5JE">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="364"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="395"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PMq-bc-BF2" customClass="FancyView" customModule="MySocialApp" customModuleProvider="target">
-                                                    <rect key="frame" x="16" y="8" width="288" height="348.5"/>
+                                                    <rect key="frame" x="16" y="8" width="288" height="378.5"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="alR-4K-toH">
-                                                            <rect key="frame" x="8" y="8" width="272" height="302.5"/>
+                                                            <rect key="frame" x="8" y="8" width="272" height="332.5"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZyG-Rg-zzL">
                                                                     <rect key="frame" x="0.0" y="0.0" width="272" height="60"/>
@@ -257,10 +257,10 @@
                                                                     </subviews>
                                                                 </stackView>
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="IBE-kV-o32">
-                                                                    <rect key="frame" x="0.0" y="68" width="272" height="151"/>
+                                                                    <rect key="frame" x="0.0" y="68" width="272" height="181"/>
                                                                 </imageView>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3ju-mI-RIi">
-                                                                    <rect key="frame" x="0.0" y="227" width="272" height="75.5"/>
+                                                                    <rect key="frame" x="0.0" y="257" width="272" height="75.5"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="L8I-3W-HOo"/>
@@ -272,7 +272,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2Nk-uO-lJw">
-                                                            <rect key="frame" x="203.5" y="318.5" width="76.5" height="22"/>
+                                                            <rect key="frame" x="203.5" y="348.5" width="76.5" height="22"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xN-aJ-Ut1">
                                                                     <rect key="frame" x="0.0" y="0.0" width="35.5" height="22"/>
