@@ -54,6 +54,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         super.viewWillAppear(true)
         
         subscribeToKeyboardNotifications()
+        
+        self.hideKeyboardWhenTappedAround()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -159,7 +161,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         performSegue(withIdentifier: "goToSignIn", sender: nil)
         
     }
-    
+  
     // MARK: Keyboard Notifications
     
     func subscribeToKeyboardNotifications() {

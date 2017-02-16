@@ -13,6 +13,8 @@ import Firebase
 import SwiftKeychainWrapper
 
 class SignInVC: UIViewController {
+    
+    var keyboardOnScreen = false
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -27,6 +29,20 @@ class SignInVC: UIViewController {
             print("Dax: ID found in keychain")
             performSegue(withIdentifier: "goToFeed", sender: nil)
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        
+        subscribeToKeyboardNotifications()
+        
+        self.hideKeyboardWhenTappedAround()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        unsubscribeFromKeyboardNotifications()
     }
 
     @IBAction func facebookBtnTapped(_ sender: Any) {
@@ -80,6 +96,7 @@ class SignInVC: UIViewController {
                                 let userData = ["provider": user.providerID]
                                 self.completeSignIn(id: user.uid, userData: userData)
                             }
+                            self.resignTextfield()
                         }
                     })
                 }
@@ -95,7 +112,73 @@ class SignInVC: UIViewController {
         performSegue(withIdentifier: "goToFeed", sender: nil)
     }
     
+    // MARK: Keyboard Notifications
     
+    func subscribeToKeyboardNotifications() {
+        NotificationCenter.default.addObserver(self, selector: #selector(SignInVC.keyboardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(SignInVC.keyboardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
     
+    func keyboardWillShow(_ notification: NSNotification) {
+        resetViewFrame()
+        if emailField.isFirstResponder {
+            view.frame.origin.y = getKeyboardHeight(notification) * -1
+        } else if passwordField.isFirstResponder {
+            view.frame.origin.y = getKeyboardHeight(notification) * -1
+        }
+    }
+    
+    func keyboardWillHide(_ notification: NSNotification) {
+        if emailField.isFirstResponder {
+            resetViewFrame()
+        } else if passwordField.isFirstResponder {
+            resetViewFrame()
+        }
+    }
+    
+    func resetViewFrame(){
+        view.frame.origin.y = 0
+    }
+    
+    func getKeyboardHeight(_ notification: NSNotification) -> CGFloat {
+        let userInfo = notification.userInfo
+        let keyboardSize = userInfo![UIKeyboardFrameEndUserInfoKey] as! NSValue // of CGRect
+        return keyboardSize.cgRectValue.height
+    }
+    
+    func unsubscribeFromKeyboardNotifications() {
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillShow, object: nil)
+        NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
+    }
+    
+    // MARK: Textfield
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        //        let data = [Constants.MessageFields.text: textField.text! as String]
+        //        sendMessage(data: data)
+        textField.text = ""
+        return true
+    }
+    
+    func resignTextfield() {
+        if emailField.isFirstResponder {
+            emailField.resignFirstResponder()
+        } else if passwordField.isFirstResponder {
+            emailField.resignFirstResponder()
+        }
+    }
+    
+}
+
+extension UIViewController {
+    func hideKeyboardWhenTappedAround() {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(UIViewController.dismissKeyboard))
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard() {
+        view.endEditing(true)
+    }
 }
 
