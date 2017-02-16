@@ -218,18 +218,18 @@
                                 <rect key="frame" x="0.0" y="66" width="320" height="427"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="339" id="T0Y-d1-xZL" customClass="PostCell" customModule="MySocialApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="320" height="339"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PostCell" rowHeight="365" id="T0Y-d1-xZL" customClass="PostCell" customModule="MySocialApp" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="365"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="T0Y-d1-xZL" id="7Ib-MW-5JE">
-                                            <rect key="frame" x="0.0" y="0.0" width="320" height="339"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="364"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PMq-bc-BF2" customClass="FancyView" customModule="MySocialApp" customModuleProvider="target">
-                                                    <rect key="frame" x="16" y="8" width="288" height="323"/>
+                                                    <rect key="frame" x="16" y="8" width="288" height="348.5"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="alR-4K-toH">
-                                                            <rect key="frame" x="8" y="8" width="272" height="277"/>
+                                                            <rect key="frame" x="8" y="8" width="272" height="302.5"/>
                                                             <subviews>
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZyG-Rg-zzL">
                                                                     <rect key="frame" x="0.0" y="0.0" width="272" height="60"/>
@@ -260,7 +260,7 @@
                                                                     <rect key="frame" x="0.0" y="68" width="272" height="151"/>
                                                                 </imageView>
                                                                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3ju-mI-RIi">
-                                                                    <rect key="frame" x="0.0" y="227" width="272" height="50"/>
+                                                                    <rect key="frame" x="0.0" y="227" width="272" height="75.5"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
                                                                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="L8I-3W-HOo"/>
@@ -272,7 +272,7 @@
                                                             </subviews>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2Nk-uO-lJw">
-                                                            <rect key="frame" x="203.5" y="293" width="76.5" height="22"/>
+                                                            <rect key="frame" x="203.5" y="318.5" width="76.5" height="22"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Likes" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7xN-aJ-Ut1">
                                                                     <rect key="frame" x="0.0" y="0.0" width="35.5" height="22"/>
@@ -314,6 +314,7 @@
                                             <outlet property="likesLbl" destination="qOW-eb-qtJ" id="yMb-t7-LL8"/>
                                             <outlet property="postImg" destination="IBE-kV-o32" id="8Hh-pU-wMe"/>
                                             <outlet property="profileImg" destination="4k4-eQ-Um5" id="cMD-zN-gvs"/>
+                                            <outlet property="usernameLbl" destination="98U-gm-kFb" id="9Dm-BD-CQm"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -324,9 +325,9 @@
                             <constraint firstItem="Wmh-El-cCs" firstAttribute="top" secondItem="HRJ-sQ-c6A" secondAttribute="top" id="0EJ-ex-bn3"/>
                             <constraint firstItem="x6o-5a-g83" firstAttribute="top" secondItem="Wmh-El-cCs" secondAttribute="bottom" id="1Y5-p0-qMb"/>
                             <constraint firstItem="x6o-5a-g83" firstAttribute="leading" secondItem="HRJ-sQ-c6A" secondAttribute="leading" id="54T-37-wEn"/>
+                            <constraint firstItem="XwO-lf-Zmq" firstAttribute="top" secondItem="hxM-1Z-oD1" secondAttribute="bottom" constant="8" id="CKx-6X-a4A"/>
                             <constraint firstAttribute="trailing" secondItem="x6o-5a-g83" secondAttribute="trailing" id="JBn-An-9MF"/>
                             <constraint firstItem="hxM-1Z-oD1" firstAttribute="trailing" secondItem="HRJ-sQ-c6A" secondAttribute="trailingMargin" id="Nor-QD-Tvf"/>
-                            <constraint firstItem="hxM-1Z-oD1" firstAttribute="top" secondItem="Wmh-El-cCs" secondAttribute="bottom" constant="427" id="Ycg-vf-vdh"/>
                             <constraint firstAttribute="trailing" secondItem="Wmh-El-cCs" secondAttribute="trailing" id="gke-5A-RDf"/>
                             <constraint firstItem="Wmh-El-cCs" firstAttribute="leading" secondItem="HRJ-sQ-c6A" secondAttribute="leading" id="leQ-Nw-ghZ"/>
                             <constraint firstItem="hxM-1Z-oD1" firstAttribute="leading" secondItem="HRJ-sQ-c6A" secondAttribute="leadingMargin" id="pH5-FU-jzq"/>
