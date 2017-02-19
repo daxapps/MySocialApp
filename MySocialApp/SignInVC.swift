@@ -15,6 +15,7 @@ import SwiftKeychainWrapper
 class SignInVC: UIViewController {
     
     var keyboardOnScreen = false
+    var fbName = ""
 
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
@@ -58,9 +59,29 @@ class SignInVC: UIViewController {
                 print("Dax: Successfully authenticated with Facebook")
                 let credential = FIRFacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
                 self.firebaseAuth(credential)
+                //print("\(self.getFirstName())")
             }
         }
+    
+        let graphRequest:FBSDKGraphRequest = FBSDKGraphRequest(graphPath: "me", parameters: ["fields":"first_name"])
+        
+        graphRequest.start(completionHandler: { (connection, result, error) -> Void in
+        
+            if (error) != nil {
+                print("Error: \(error)")
+            } else {
+                let data:[String:AnyObject] = result as! [String : AnyObject]
+                self.fbName = data["first_name"] as! String
+                print("DAX: \(self.fbName)")
+    
+            }
+            
+        })
+
     }
+    
+    
+    
     
     func firebaseAuth(_ credential: FIRAuthCredential) {
         FIRAuth.auth()?.signIn(with: credential, completion: { (user, error) in
@@ -70,7 +91,8 @@ class SignInVC: UIViewController {
                 print("Dax: Successfully authenticated with Firebase")
                 if let user = user {
                     let userData = ["provider": credential.provider]
-                    self.completeSignIn(id: user.uid, userData: userData)
+                    let userName = ["username": self.fbName]
+                    self.completeSignIn(id: user.uid, userData: userData, userName: userName )
                     
                 }
             }
@@ -85,8 +107,8 @@ class SignInVC: UIViewController {
                     print("Dax: Email user authenticated with Firebase")
                     if let user = user {
                         let userData = ["provider": user.providerID]
-                        
-                        self.completeSignIn(id: user.uid, userData: userData)
+                        let userName = ["username": self.emailField.text]
+                        self.completeSignIn(id: user.uid, userData: userData, userName: userName as! Dictionary<String, String>)
                     }
                 } else {
                     FIRAuth.auth()?.createUser(withEmail: email, password: pwd, completion: { (user, error) in
@@ -96,8 +118,8 @@ class SignInVC: UIViewController {
                             print("Dax: Successfully authenticated with Firebase")
                             if let user = user {
                                 let userData = ["provider": user.providerID]
-                                _ = ["username": self.emailField.text]
-                                self.completeSignIn(id: user.uid, userData: userData)
+                                let userName = ["username": self.emailField.text?.components(separatedBy: "@")[0]]
+                                self.completeSignIn(id: user.uid, userData: userData, userName: userName as! Dictionary<String, String>)
                             }
                             self.resignTextfield()
                         }
@@ -107,8 +129,8 @@ class SignInVC: UIViewController {
         }
     }
     
-    func completeSignIn(id: String, userData: Dictionary<String, String>) {
-        DataService.ds.createFirbaseDBUser(uid: id, userData: userData)
+    func completeSignIn(id: String, userData: Dictionary<String, String>, userName: Dictionary<String, String>) {
+        DataService.ds.createFirbaseDBUser(uid: id, userData: userData, userName: userName)
         //let keychainResult = KeychainWrapper.setString(id, forKey: KEY_UID)
         let keychainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("Dax: Data saved to keychain \(keychainResult)")
