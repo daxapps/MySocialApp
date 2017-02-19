@@ -71,6 +71,7 @@ class SignInVC: UIViewController {
                 if let user = user {
                     let userData = ["provider": credential.provider]
                     self.completeSignIn(id: user.uid, userData: userData)
+                    
                 }
             }
         })
@@ -84,6 +85,7 @@ class SignInVC: UIViewController {
                     print("Dax: Email user authenticated with Firebase")
                     if let user = user {
                         let userData = ["provider": user.providerID]
+                        
                         self.completeSignIn(id: user.uid, userData: userData)
                     }
                 } else {
@@ -94,6 +96,7 @@ class SignInVC: UIViewController {
                             print("Dax: Successfully authenticated with Firebase")
                             if let user = user {
                                 let userData = ["provider": user.providerID]
+                                _ = ["username": self.emailField.text]
                                 self.completeSignIn(id: user.uid, userData: userData)
                             }
                             self.resignTextfield()

@@ -17,6 +17,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     static var imageCache: NSCache<NSString, UIImage> = NSCache()
     var imageSelected = false
     var keyboardOnScreen = false
+    //let name = user!.email!.components(separatedBy: "@")[0]
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imageAdd: CircleView!
@@ -137,10 +138,12 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     }
     
     func postToFirebase(imgUrl: String) {
+        let uid = KeychainWrapper.standard.string(forKey: KEY_UID)
         let post: Dictionary<String, AnyObject> = [
             "caption": captionField.text! as AnyObject,
             "imageUrl": imgUrl as AnyObject,
-            "likes": 0 as AnyObject
+            "likes": 0 as AnyObject,
+            "uid": uid as AnyObject
         ]
         
         let firebasePost = DataService.ds.REF_POSTS.childByAutoId()
