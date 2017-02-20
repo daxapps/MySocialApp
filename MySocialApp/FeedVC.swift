@@ -20,7 +20,7 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     //let name = user!.email!.components(separatedBy: "@")[0]
     
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var imageAdd: CircleView!
+    @IBOutlet weak var imageAdd: UIImageView!
     @IBOutlet weak var captionField: UITextField!
     
     override func viewDidLoad() {
@@ -103,8 +103,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     }
     
     @IBAction func addImageTapped(_ sender: AnyObject) {
-        //present(imagePicker, animated: true, completion: nil)
-        performSegue(withIdentifier: "ShowImageVC", sender: AnyObject.self)
+        present(imagePicker, animated: true, completion: nil)
+        
     }
     
     @IBAction func postBtnTapped(_ sender: AnyObject) {

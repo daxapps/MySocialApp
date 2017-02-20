@@ -338,8 +338,8 @@
                     </view>
                     <connections>
                         <outlet property="captionField" destination="0J7-JC-NOd" id="3RJ-te-ib5"/>
+                        <outlet property="imageAdd" destination="0s3-eW-Kz0" id="GBv-S9-Efu"/>
                         <outlet property="tableView" destination="x6o-5a-g83" id="mJc-Di-W8p"/>
-                        <segue destination="rb0-9P-pVb" kind="show" identifier="ShowImageVC" id="sMr-KF-zP5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nN8-XO-GGn" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -356,59 +356,6 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="2028.75" y="36.971830985915496"/>
-        </scene>
-        <!--ImageVC-->
-        <scene sceneID="CbQ-Yr-Gov">
-            <objects>
-                <viewController id="rb0-9P-pVb" customClass="ImageVC" customModule="MySocialApp" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="qEI-2T-bR2"/>
-                        <viewControllerLayoutGuide type="bottom" id="Vst-ZC-3tW"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hjK-Y9-7Bf">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DUU-l6-iff">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
-                            </imageView>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MoR-0R-gMq">
-                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
-                                <items>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hM2-Nm-VLP"/>
-                                    <barButtonItem systemItem="camera" id="6Ho-ph-fre"/>
-                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="0Wy-eA-7zQ"/>
-                                    <barButtonItem title="Album" id="EGG-dU-eyQ"/>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="kHR-iC-z2i"/>
-                                </items>
-                            </toolbar>
-                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nn2-Uy-md2">
-                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                <items>
-                                    <navigationItem id="4sI-OI-GEq">
-                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="kVK-QA-CRd">
-                                            <connections>
-                                                <action selector="cancellBtnPressed:" destination="rb0-9P-pVb" id="Zgr-XL-oJt"/>
-                                            </connections>
-                                        </barButtonItem>
-                                    </navigationItem>
-                                </items>
-                            </navigationBar>
-                        </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="DUU-l6-iff" firstAttribute="leading" secondItem="hjK-Y9-7Bf" secondAttribute="leading" id="N91-pn-EIs"/>
-                            <constraint firstItem="DUU-l6-iff" firstAttribute="top" secondItem="hjK-Y9-7Bf" secondAttribute="top" id="ZKS-lF-qlt"/>
-                            <constraint firstItem="Vst-ZC-3tW" firstAttribute="top" secondItem="DUU-l6-iff" secondAttribute="bottom" id="ejk-sQ-oHl"/>
-                            <constraint firstAttribute="trailing" secondItem="DUU-l6-iff" secondAttribute="trailing" id="k6s-ZH-xFN"/>
-                        </constraints>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="u3D-yF-XHe" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="2816.25" y="39.08450704225352"/>
         </scene>
     </scenes>
     <resources>
