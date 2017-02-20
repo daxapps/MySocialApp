@@ -25,7 +25,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zZT-cG-kMX">
                                 <rect key="frame" x="0.0" y="507" width="320" height="61"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you haven't signed in before, an account will be automatically created for you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W8o-Ih-tkH">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="If you haven't signed in before, an account will be automatically created for you" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="W8o-Ih-tkH">
                                         <rect key="frame" x="6" y="4" width="308" height="53"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="308" id="WPF-u9-ZlZ"/>
@@ -119,6 +119,7 @@
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zZT-cG-kMX" secondAttribute="bottom" id="xxK-sp-rjW"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="Fwb-K0-L1q"/>
                     <connections>
                         <outlet property="emailField" destination="RPL-5I-hGw" id="pjZ-wr-m24"/>
                         <outlet property="passwordField" destination="NXK-Kj-gMu" id="wYF-I5-eGZ"/>
@@ -128,7 +129,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="Ued-Jf-unj"/>
             </objects>
-            <point key="canvasLocation" x="31.875" y="36.971830985915496"/>
+            <point key="canvasLocation" x="1029.375" y="36.971830985915496"/>
         </scene>
         <!--FeedVC-->
         <scene sceneID="5kb-oV-9PB">
@@ -180,7 +181,7 @@
                                                     <constraint firstAttribute="height" constant="45" id="zD5-7I-a6n"/>
                                                 </constraints>
                                                 <connections>
-                                                    <outletCollection property="gestureRecognizers" destination="Zic-CJ-2es" appends="YES" id="Kkk-V7-5A8"/>
+                                                    <outletCollection property="gestureRecognizers" destination="Zic-CJ-2es" appends="YES" id="uE5-kp-9uE"/>
                                                 </connections>
                                             </imageView>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0J7-JC-NOd">
@@ -235,7 +236,7 @@
                                                                 <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZyG-Rg-zzL">
                                                                     <rect key="frame" x="0.0" y="0.0" width="272" height="60"/>
                                                                     <subviews>
-                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="profile" translatesAutoresizingMaskIntoConstraints="NO" id="4k4-eQ-Um5" customClass="CircleView" customModule="MySocialApp" customModuleProvider="target">
+                                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="blank-profile" translatesAutoresizingMaskIntoConstraints="NO" id="4k4-eQ-Um5" customClass="CircleView" customModule="MySocialApp" customModuleProvider="target">
                                                                             <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                                                             <constraints>
                                                                                 <constraint firstAttribute="width" constant="60" id="eEe-F0-Y4h"/>
@@ -260,7 +261,7 @@
                                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="placeholder" translatesAutoresizingMaskIntoConstraints="NO" id="IBE-kV-o32">
                                                                     <rect key="frame" x="0.0" y="68" width="272" height="181"/>
                                                                 </imageView>
-                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3ju-mI-RIi">
+                                                                <textView clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" keyboardDismissMode="interactive" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="3ju-mI-RIi">
                                                                     <rect key="frame" x="0.0" y="257" width="272" height="75.5"/>
                                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                                     <constraints>
@@ -337,34 +338,86 @@
                     </view>
                     <connections>
                         <outlet property="captionField" destination="0J7-JC-NOd" id="3RJ-te-ib5"/>
-                        <outlet property="imageAdd" destination="0s3-eW-Kz0" id="wU5-wC-9QE"/>
                         <outlet property="tableView" destination="x6o-5a-g83" id="mJc-Di-W8p"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="goToSignIn" id="4gS-3L-hE8"/>
+                        <segue destination="rb0-9P-pVb" kind="show" identifier="ShowImageVC" id="sMr-KF-zP5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nN8-XO-GGn" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <tapGestureRecognizer id="Ecy-vO-4ly"/>
-                <tapGestureRecognizer id="P7t-Zw-sAk">
-                    <connections>
-                        <action selector="signOutTapped:" destination="bR5-Rz-fa8" id="dvT-cL-71l"/>
-                    </connections>
-                </tapGestureRecognizer>
                 <tapGestureRecognizer id="Zic-CJ-2es">
                     <connections>
                         <action selector="addImageTapped:" destination="bR5-Rz-fa8" id="VqK-4m-O4e"/>
                     </connections>
                 </tapGestureRecognizer>
+                <tapGestureRecognizer id="P7t-Zw-sAk">
+                    <connections>
+                        <action selector="signOutTapped:" destination="bR5-Rz-fa8" id="dvT-cL-71l"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="1033" y="37"/>
+            <point key="canvasLocation" x="2028.75" y="36.971830985915496"/>
+        </scene>
+        <!--ImageVC-->
+        <scene sceneID="CbQ-Yr-Gov">
+            <objects>
+                <viewController id="rb0-9P-pVb" customClass="ImageVC" customModule="MySocialApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="qEI-2T-bR2"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vst-ZC-3tW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hjK-Y9-7Bf">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="DUU-l6-iff">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                            </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MoR-0R-gMq">
+                                <rect key="frame" x="0.0" y="524" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <items>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="hM2-Nm-VLP"/>
+                                    <barButtonItem systemItem="camera" id="6Ho-ph-fre"/>
+                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="0Wy-eA-7zQ"/>
+                                    <barButtonItem title="Album" id="EGG-dU-eyQ"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="kHR-iC-z2i"/>
+                                </items>
+                            </toolbar>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Nn2-Uy-md2">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <items>
+                                    <navigationItem id="4sI-OI-GEq">
+                                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="kVK-QA-CRd">
+                                            <connections>
+                                                <action selector="cancellBtnPressed:" destination="rb0-9P-pVb" id="Zgr-XL-oJt"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DUU-l6-iff" firstAttribute="leading" secondItem="hjK-Y9-7Bf" secondAttribute="leading" id="N91-pn-EIs"/>
+                            <constraint firstItem="DUU-l6-iff" firstAttribute="top" secondItem="hjK-Y9-7Bf" secondAttribute="top" id="ZKS-lF-qlt"/>
+                            <constraint firstItem="Vst-ZC-3tW" firstAttribute="top" secondItem="DUU-l6-iff" secondAttribute="bottom" id="ejk-sQ-oHl"/>
+                            <constraint firstAttribute="trailing" secondItem="DUU-l6-iff" secondAttribute="trailing" id="k6s-ZH-xFN"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="u3D-yF-XHe" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2816.25" y="39.08450704225352"/>
         </scene>
     </scenes>
     <resources>
         <image name="add-image" width="88" height="88"/>
         <image name="add-post" width="88" height="88"/>
+        <image name="blank-profile" width="225" height="225"/>
         <image name="empty-heart" width="70" height="70"/>
         <image name="facebookLogo" width="35" height="35"/>
         <image name="placeholder" width="567" height="312"/>
-        <image name="profile" width="113" height="155"/>
         <image name="sign-out" width="92" height="65"/>
     </resources>
 </document>

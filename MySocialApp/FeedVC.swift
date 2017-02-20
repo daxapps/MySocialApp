@@ -103,7 +103,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     }
     
     @IBAction func addImageTapped(_ sender: AnyObject) {
-        present(imagePicker, animated: true, completion: nil)
+        //present(imagePicker, animated: true, completion: nil)
+        performSegue(withIdentifier: "ShowImageVC", sender: AnyObject.self)
     }
     
     @IBAction func postBtnTapped(_ sender: AnyObject) {
@@ -161,8 +162,8 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
         let keychainResult = KeychainWrapper.standard.removeObject(forKey: KEY_UID)
         print("Dax: ID removed from keychain \(keychainResult)")
         try! FIRAuth.auth()?.signOut()
-        performSegue(withIdentifier: "goToSignIn", sender: nil)
-        
+
+        dismiss(animated: true, completion: nil)
     }
   
     // MARK: Keyboard Notifications

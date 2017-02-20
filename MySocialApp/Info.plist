@@ -62,6 +62,8 @@
 		<string>fbshareextension</string>
 	</array>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>Acciess th photos is required for posting</string>
+	<string>Acciess to photos is required for posting</string>
+	<key>NSCameraUsageDescription</key>
+	<string>Access to your camera is required to take photos</string>
 </dict>
 </plist>
