@@ -93,18 +93,41 @@ class FeedVC: UIViewController, UITableViewDelegate, UITableViewDataSource, UIIm
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        if let image = info[UIImagePickerControllerEditedImage] as? UIImage {
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             imageAdd.image = image
             imageSelected = true
         } else {
             print("Dax: A valid image wasn't selected")
         }
-        imagePicker.dismiss(animated: true, completion: nil)
+        dismiss(animated: true, completion: nil)
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        dismiss(animated: true, completion: nil)
     }
     
     @IBAction func addImageTapped(_ sender: AnyObject) {
-        present(imagePicker, animated: true, completion: nil)
+//        imagePicker.sourceType = UIImagePickerControllerSourceType.camera
+//        imagePicker.cameraCaptureMode = .photo
+//        present(imagePicker, animated: true, completion: nil)
         
+        let imagePicker = UIImagePickerController()
+        imagePicker.delegate = self
+        let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: {
+            action in
+            imagePicker.sourceType = .camera
+            imagePicker.cameraCaptureMode = .photo
+            self.present(imagePicker, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Photo Library", style: .default, handler: {
+            action in
+            imagePicker.sourceType = .photoLibrary
+            self.present(imagePicker, animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        present(alert, animated: true, completion: nil)
     }
     
     @IBAction func postBtnTapped(_ sender: AnyObject) {
